@@ -1,0 +1,40 @@
+:root {
+    --bg: #7b9acc;
+    --text: #FCF6F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.flight-validation-card {
+    width: 100%;
+    height: 65vw;
+    background-color: var(--text);
+    position: absolute;
+    bottom: 0;
+}
+
+.main-icon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.main-icon > img {
+    aspect-ratio: 1/1;
+    width: 8rem;
+}
