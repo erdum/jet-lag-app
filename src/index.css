@@ -1,0 +1,48 @@
+:root {
+    --bg: #7b9acc;
+    --text: #FCF6F5;
+}
+
+.app-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg);
+    position: relative;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.main-icon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-icon > img {
+    aspect-ratio: 1/1;
+    width: 35vw;
+}
+
+.main-card {
+    width: 100%;
+    height: 11rem;
+    background-color: var(--text);
+    position: absolute;
+    bottom: 0;
+    border-radius: 2rem 2rem 0 0;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 600px) {
+    .main-card {
+        height: 15rem;
+    }
+}
+
+@media (min-width: 980px) {
+}
