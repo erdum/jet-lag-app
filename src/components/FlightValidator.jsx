@@ -3,10 +3,23 @@ import { InputGroup, InputLeftElement, InputRightElement, Input, Button } from "
 import { CheckIcon, CloseIcon, CalendarIcon } from "@chakra-ui/icons";
 import ticketPng from "../assets/ticket.png";
 
-function FlightValidator() {
+const FlightValidator = ({ clickHandler }) => {
     const [flightNumber, setFlightNumber] = useState("");
     const [isFlightValid, setFlightValid] = useState(false);
+    const [isRequired, setRequired] = useState(false);
     const handleChange = (event) => setFlightNumber(event.target.value);
+
+    const handleAddItinerary = () => {
+    	
+    	if (!isFlightValid) {
+    		setRequired(true);
+	    	setTimeout(() => {
+	    		setRequired(false);
+	    	}, 500);
+	    } else {
+	    	clickHandler();
+	    }
+    };
 
     return (
     	<>
@@ -16,7 +29,9 @@ function FlightValidator() {
 					</InputLeftElement>
 					<Input
 						value={flightNumber}
-		        onChange={handleChange}
+				        onChange={handleChange}
+				        isInvalid={isRequired}
+				        errorBorderColor="red.500"
 						variant="outline"
 						_placeholder={{ color: "brand.bg" }}
 						placeholder="Enter flight number"
@@ -37,7 +52,21 @@ function FlightValidator() {
 						</InputRightElement>
 					}
 			</InputGroup>
-			<Button mt="4" w="full" sx={{ bg: "brand.bg", color: "brand.text" }}>Add Itinerary</Button>
+			<Button
+				onClick={handleAddItinerary}
+				sx={{
+					marginTop: "1rem",
+					width: "full",
+					bg: "brand.bg",
+					color: "brand.text",
+					_hover: {
+						bg: "gray.500"
+					}
+				}}
+				size={{ base: "md", md: "lg" }}
+			>
+				Add Itinerary
+			</Button>
 		</>
     );
 };

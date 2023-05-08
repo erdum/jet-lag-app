@@ -45,4 +45,22 @@
 }
 
 @media (min-width: 980px) {
+    .app-wrapper {
+        text-align: left;
+        padding: 10vh 6vw;
+    }
+    .main-icon {
+        justify-content: start;
+    }
+    .main-icon > img {
+        width: 30vw;
+    }
+    .main-card {
+        width: 28rem;
+        height: 12rem;
+        top: 50%;
+        right: 5rem;
+        transform: translateY(-50%);
+        border-radius: 1.5rem;
+    }
 }
